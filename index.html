@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Sagar KC — Data Analyst & Business Intelligence portfolio. SQL, Power BI, Excel, DAX and Power Query projects.">
+<title>Sagar KC | Data Analyst Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f5f7fb; --surface:#fff; --surface2:#eef3f8; --text:#0f172a; --muted:#64748b;
+  --line:#dbe3ec; --accent:#2563eb; --accent2:#0ea5e9; --navy:#081b33;
+  --shadow:0 12px 32px rgba(15,23,42,.07); --radius:18px;
+}
+[data-theme="dark"]{
+  --bg:#07111f; --surface:#0c1b2d; --surface2:#10243a; --text:#e8eef7; --muted:#9fb0c4;
+  --line:#20344a; --accent:#60a5fa; --accent2:#38bdf8; --navy:#06101d;
+  --shadow:0 16px 40px rgba(0,0,0,.22);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Inter,system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.55}
+a{color:inherit;text-decoration:none}
+.container{width:min(1120px,92%);margin:auto}
+.nav{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--surface) 90%,transparent);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+.nav-inner{height:72px;display:flex;align-items:center;justify-content:space-between}
+.brand{font-weight:800;letter-spacing:-.03em}.brand span{display:block;color:var(--accent);font-size:11px;letter-spacing:.08em;margin-top:-2px}
+.navlinks{display:flex;gap:24px;align-items:center;font-size:13px;font-weight:600;color:var(--muted)}
+.navlinks a:hover{color:var(--accent)}
+.nav-actions{display:flex;gap:8px}
+.iconbtn,.menu{border:1px solid var(--line);background:var(--surface);color:var(--text);border-radius:10px;width:38px;height:38px;cursor:pointer}
+.menu{display:none}
+.hero{padding:82px 0 64px;background:radial-gradient(circle at 85% 20%,rgba(37,99,235,.16),transparent 30%),linear-gradient(135deg,var(--navy),#0b2a4d);color:#fff}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:50px;align-items:center}
+.eyebrow{font:600 12px "JetBrains Mono",monospace;color:#7dd3fc;letter-spacing:.08em;text-transform:uppercase}
+h1{font-size:clamp(42px,6vw,72px);line-height:.98;letter-spacing:-.055em;margin:14px 0 16px}
+.hero h2{font-size:22px;color:#8ecbff;margin:0 0 18px}
+.hero p{max-width:650px;color:#cbd8e8;font-size:16px}
+.ctas{display:flex;gap:12px;margin-top:26px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 17px;border-radius:11px;font-weight:700;font-size:13px;border:1px solid transparent}
+.btn-primary{background:#fff;color:#0b2340}.btn-primary:hover{transform:translateY(-1px)}
+.btn-ghost{border-color:#41627f;color:#fff;background:rgba(255,255,255,.04)}
+.hero-card{border:1px solid rgba(255,255,255,.15);background:rgba(255,255,255,.06);border-radius:24px;padding:24px;box-shadow:0 25px 70px rgba(0,0,0,.2)}
+.chart{height:210px;display:flex;align-items:end;gap:10px;padding:24px 12px 12px;border-bottom:1px solid rgba(255,255,255,.12)}
+.bar{flex:1;border-radius:7px 7px 2px 2px;background:linear-gradient(180deg,#38bdf8,#2563eb);opacity:.9;min-height:35px}
+.chart-label{display:flex;justify-content:space-between;color:#9db3ca;font:11px "JetBrains Mono",monospace;margin-top:12px}
+section{padding:76px 0}.section-head{display:flex;justify-content:space-between;align-items:end;gap:20px;margin-bottom:28px}
+.kicker{color:var(--accent);font:700 11px "JetBrains Mono",monospace;text-transform:uppercase;letter-spacing:.1em}
+h3{font-size:30px;letter-spacing:-.04em;margin:5px 0 0}.section-head p{color:var(--muted);max-width:520px;margin:0}
+.skills{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.skill{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow)}
+.skill .num{font:600 11px "JetBrains Mono";color:var(--accent);margin-bottom:16px}
+.skill h4{margin:0 0 7px;font-size:16px}.skill p{margin:0;color:var(--muted);font-size:13px}
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px}.filter{border:1px solid var(--line);background:var(--surface);color:var(--muted);padding:8px 12px;border-radius:999px;font-weight:700;font-size:12px;cursor:pointer}.filter.active,.filter:hover{background:var(--accent);color:#fff;border-color:var(--accent)}
+.projects{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.project{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);transition:.2s}.project:hover{transform:translateY(-4px)}
+.project-visual{height:180px;background:linear-gradient(135deg,#071b33,#12385e);position:relative;padding:18px;overflow:hidden}
+.project-visual.light{background:linear-gradient(135deg,#f8fafc,#dce8f5)}
+.mini-kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:7px}.mini-kpi{height:35px;border-radius:5px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.12)}
+.mini-lines{position:absolute;left:18px;right:18px;bottom:20px;height:82px;display:flex;align-items:end;gap:6px}.mini-lines i{flex:1;background:#60a5fa;border-radius:3px 3px 0 0;min-height:18px}
+.project-body{padding:20px}.project h4{font-size:18px;margin:0 0 8px}.project p{font-size:13px;color:var(--muted);margin:0 0 15px}.tags{display:flex;flex-wrap:wrap;gap:6px}.tag{font-size:10px;font-weight:700;background:var(--surface2);padding:5px 8px;border-radius:999px;color:var(--muted)}
+.timeline{display:grid;grid-template-columns:1.15fr .85fr;gap:20px}.panel{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:25px;box-shadow:var(--shadow)}
+.item{position:relative;padding:0 0 24px 22px;border-left:2px solid var(--line)}.item:last-child{padding-bottom:0}.item:before{content:"";position:absolute;left:-6px;top:3px;width:10px;height:10px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px var(--surface)}
+.item h4{margin:0;font-size:15px}.item .meta{font-size:11px;color:var(--accent);font-weight:700;margin:3px 0 8px}.item p{font-size:12px;color:var(--muted);margin:0}
+.edu{display:grid;gap:18px}.edu-row{display:flex;justify-content:space-between;gap:20px;padding-bottom:15px;border-bottom:1px solid var(--line)}.edu-row:last-child{border:0;padding:0}.edu-row h4{margin:0;font-size:14px}.edu-row p{margin:4px 0 0;color:var(--muted);font-size:12px}.date{font:600 11px "JetBrains Mono";color:var(--muted);white-space:nowrap}
+.contact{background:var(--navy);color:#fff}.contact-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:50px}.contact p{color:#b9c9da}.contact-list{display:grid;gap:11px;color:#d9e4ef;font-size:13px}.contact-list a:hover{color:#7dd3fc}
+footer{background:var(--navy);color:#8095aa;border-top:1px solid #19334f;padding:18px 0;font-size:11px}
+.reveal{opacity:0;transform:translateY(14px);transition:.55s ease}.reveal.show{opacity:1;transform:none}
+@media(max-width:850px){
+ .navlinks{display:none}.menu{display:block}.hero-grid,.timeline,.contact-grid{grid-template-columns:1fr}.hero{padding-top:55px}.skills{grid-template-columns:repeat(2,1fr)}.projects{grid-template-columns:1fr}
+}
+@media(max-width:520px){
+ .skills{grid-template-columns:1fr}.hero h2{font-size:18px}.section-head{display:block}.section-head p{margin-top:10px}.nav-inner{height:64px}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="container nav-inner">
+    <a class="brand" href="#home">SAGAR KC<span>DATA ANALYST • BUSINESS INTELLIGENCE</span></a>
+    <div class="navlinks">
+      <a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a>
+      <a href="#experience">Experience</a><a href="#education">Education</a><a href="#contact">Contact</a>
+    </div>
+    <div class="nav-actions">
+      <button class="iconbtn" id="theme" aria-label="Toggle theme">☾</button>
+      <button class="menu" id="menu" aria-label="Open menu">☰</button>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="home">
+  <div class="container hero-grid">
+    <div class="reveal">
+      <div class="eyebrow">DATA • INSIGHTS • DECISIONS</div>
+      <h1>Turning data into<br>clear decisions.</h1>
+      <h2>Data Analyst | Business Intelligence</h2>
+      <p>I build interactive dashboards, clean and transform data, and translate business questions into useful insights using SQL, Power BI, Excel, DAX, and Power Query.</p>
+      <div class="ctas">
+        <a class="btn btn-primary" href="#projects">Explore Projects →</a>
+        <a class="btn btn-ghost" href="Sagar_KC_Data_Analyst_Final.docx" download>Download Resume ↓</a>
+      </div>
+    </div>
+    <div class="hero-card reveal" aria-label="Analytics visual">
+      <div class="eyebrow">PORTFOLIO SNAPSHOT</div>
+      <div class="chart">
+        <i class="bar" style="height:38%"></i><i class="bar" style="height:54%"></i><i class="bar" style="height:47%"></i>
+        <i class="bar" style="height:68%"></i><i class="bar" style="height:62%"></i><i class="bar" style="height:79%"></i>
+        <i class="bar" style="height:73%"></i><i class="bar" style="height:92%"></i>
+      </div>
+      <div class="chart-label"><span>ANALYTICS WORK</span><span>03 DASHBOARDS</span></div>
+    </div>
+  </div>
+</header>
+
+<section id="about">
+  <div class="container reveal">
+    <div class="section-head">
+      <div><div class="kicker">01 / Profile</div><h3>Analyst mindset. Practical work.</h3></div>
+      <p>Computer Science undergraduate building a career around data analysis, business intelligence, and decision-focused reporting.</p>
+    </div>
+    <div class="skills">
+      <div class="skill"><div class="num">01</div><h4>Analyze</h4><p>Use SQL and Excel to explore, clean, filter, aggregate, and interpret business data.</p></div>
+      <div class="skill"><div class="num">02</div><h4>Transform</h4><p>Prepare datasets with Power Query and build structured models for reporting.</p></div>
+      <div class="skill"><div class="num">03</div><h4>Visualize</h4><p>Design interactive Power BI dashboards with KPIs, slicers, trends, and business views.</p></div>
+      <div class="skill"><div class="num">04</div><h4>Communicate</h4><p>Turn analytical findings into concise, business-focused insights and reports.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="container reveal">
+    <div class="section-head"><div><div class="kicker">02 / Toolkit</div><h3>Technical Skills</h3></div><p>A focused stack for data analysis and business intelligence work.</p></div>
+    <div class="skills">
+      <div class="skill"><div class="num">SQL</div><h4>Query & Analysis</h4><p>SELECT, WHERE, GROUP BY, HAVING, JOINs, CTEs, subqueries, CASE WHEN, window functions, aggregates.</p></div>
+      <div class="skill"><div class="num">POWER BI</div><h4>BI & Dashboards</h4><p>DAX, Power Query, data modeling, dashboard development, KPI reporting, slicers, interactive reports.</p></div>
+      <div class="skill"><div class="num">EXCEL</div><h4>Spreadsheet Analysis</h4><p>Data cleaning, Pivot Tables, XLOOKUP, IF/IFS, SUM, COUNT, AVERAGE, sorting and filtering.</p></div>
+      <div class="skill"><div class="num">TOOLS</div><h4>Working Environment</h4><p>Power BI Desktop, Microsoft Excel, MySQL, data transformation and exploratory analysis.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="container reveal">
+    <div class="section-head"><div><div class="kicker">03 / Selected Work</div><h3>Featured Projects</h3></div><p>Three portfolio dashboards built around different business domains.</p></div>
+    <div class="filters">
+      <button class="filter active" data-filter="all">All</button><button class="filter" data-filter="finance">Finance</button>
+      <button class="filter" data-filter="health">Healthcare</button><button class="filter" data-filter="ecommerce">E-Commerce</button>
+    </div>
+    <div class="projects">
+      <article class="project" data-category="finance">
+        <div class="project-visual"><div class="mini-kpis"><i class="mini-kpi"></i><i class="mini-kpi"></i><i class="mini-kpi"></i><i class="mini-kpi"></i></div><div class="mini-lines"><i style="height:35%"></i><i style="height:52%"></i><i style="height:45%"></i><i style="height:72%"></i><i style="height:64%"></i><i style="height:88%"></i></div></div>
+        <div class="project-body"><h4>Banking & Finance Dashboard</h4><p>Interactive loan dashboard covering loan trends, branch distribution, loan status, and top-customer performance.</p><div class="tags"><span class="tag">Power BI</span><span class="tag">DAX</span><span class="tag">Power Query</span><span class="tag">KPI Reporting</span></div></div>
+      </article>
+      <article class="project" data-category="health">
+        <div class="project-visual light"><div class="mini-kpis"><i class="mini-kpi"></i><i class="mini-kpi"></i><i class="mini-kpi"></i><i class="mini-kpi"></i></div><div class="mini-lines"><i style="height:52%"></i><i style="height:42%"></i><i style="height:74%"></i><i style="height:58%"></i><i style="height:83%"></i><i style="height:67%"></i></div></div>
+        <div class="project-body"><h4>Hospital Operations Dashboard</h4><p>Healthcare dashboard tracking hospital performance, revenue trends, department revenue, and gender distribution.</p><div class="tags"><span class="tag">Power BI</span><span class="tag">DAX</span><span class="tag">Power Query</span><span class="tag">Operations</span></div></div>
+      </article>
+      <article class="project" data-category="ecommerce">
+        <div class="project-visual"><div class="mini-kpis"><i class="mini-kpi"></i><i class="mini-kpi"></i><i class="mini-kpi"></i><i class="mini-kpi"></i></div><div class="mini-lines"><i style="height:45%"></i><i style="height:63%"></i><i style="height:57%"></i><i style="height:79%"></i><i style="height:70%"></i><i style="height:91%"></i></div></div>
+        <div class="project-body"><h4>E-Commerce Sales Dashboard</h4><p>Sales and revenue dashboard covering profit, customer behavior, product performance, and category trends.</p><div class="tags"><span class="tag">Power BI</span><span class="tag">DAX</span><span class="tag">Power Query</span><span class="tag">Sales Analysis</span></div></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="container reveal">
+    <div class="section-head"><div><div class="kicker">04 / Experience</div><h3>Experience & Credentials</h3></div><p>Hands-on learning and professional simulations supporting my analytics foundation.</p></div>
+    <div class="timeline">
+      <div class="panel">
+        <div class="item"><h4>Data Analytics with AI Intern</h4><div class="meta">AICTE–BharatCares–IBM SkillsBuild · Aug 2026</div><p>Completed a 6-week virtual internship covering data cleaning, wrangling, exploratory analysis, predictive analytics, machine learning basics, and AI-driven visualization. Delivered a final capstone project.</p></div>
+        <div class="item"><h4>Data Analytics Job Simulation</h4><div class="meta">Deloitte · Jun 2026</div><p>Completed practical data analysis, business analysis, and forensic technology tasks in a simulated professional environment.</p></div>
+      </div>
+      <div class="panel" id="education">
+        <div class="kicker" style="margin-bottom:16px">Education</div>
+        <div class="edu">
+          <div class="edu-row"><div><h4>B.Tech in Computer Science & Engineering</h4><p>CMR University, Bengaluru · CGPA: 7.5 / 10</p></div><span class="date">2023–2027</span></div>
+          <div class="edu-row"><div><h4>Senior Secondary (XII / PUC)</h4><p>Vedanta PU College</p></div><span class="date">2021–2023</span></div>
+          <div class="edu-row"><div><h4>Secondary School (X)</h4><p>Swami Vivekananda Vidya Samasthe</p></div></div>
+        </div>
+        <div class="kicker" style="margin:28px 0 14px">Certifications</div>
+        <div class="edu">
+          <div class="edu-row"><div><h4>IBM SkillsBuild Data Analytics with AI</h4><p>AICTE–BharatCares–IBM</p></div><span class="date">19 Aug 2026</span></div>
+          <div class="edu-row"><div><h4>Deloitte Data Analytics Job Simulation</h4><p>Certificate of Completion</p></div><span class="date">15 Jun 2026</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="container contact-grid reveal">
+    <div><div class="kicker">05 / Contact</div><h3>Let's connect.</h3><p>Open to Data Analyst, Business Intelligence, and related entry-level opportunities.</p></div>
+    <div class="contact-list">
+      <a href="mailto:sagarkcrs@gmail.com">✉ &nbsp; sagarkcrs@gmail.com</a>
+      <a href="tel:+918217767505">☎ &nbsp; +91 8217767505</a>
+      <span>⌖ &nbsp; Raichur, Karnataka, India</span>
+      <a href="https://linkedin.com/in/sagar-kc-0309bb300" target="_blank" rel="noopener">in &nbsp; linkedin.com/in/sagar-kc-0309bb300 ↗</a>
+      <div>Languages: English · Kannada · Hindi · Telugu</div>
+    </div>
+  </div>
+</section>
+
+<footer><div class="container">© 2026 Sagar KC · Data Analyst | Business Intelligence</div></footer>
+
+<script>
+const root=document.documentElement;
+const saved=localStorage.getItem('theme');
+if(saved) root.dataset.theme=saved;
+document.getElementById('theme').addEventListener('click',()=>{
+  const next=root.dataset.theme==='dark'?'light':'dark';
+  root.dataset.theme=next; localStorage.setItem('theme',next);
+});
+document.querySelectorAll('.filter').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    document.querySelectorAll('.filter').forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    const f=btn.dataset.filter;
+    document.querySelectorAll('.project').forEach(p=>p.style.display=(f==='all'||p.dataset.category===f)?'block':'none');
+  });
+});
+const menu=document.getElementById('menu');
+menu.addEventListener('click',()=>{
+  const nav=document.querySelector('.navlinks');
+  const open=nav.style.display==='flex';
+  nav.style.display=open?'none':'flex';
+  if(!open){nav.style.position='absolute';nav.style.top='64px';nav.style.left='0';nav.style.right='0';nav.style.padding='18px 5%';nav.style.background='var(--surface)';nav.style.borderBottom='1px solid var(--line)';nav.style.flexDirection='column';nav.style.alignItems='flex-start'}
+});
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('show')}),{threshold:.08});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
