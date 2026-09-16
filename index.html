@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Sagar KC — Data Analyst & Business Intelligence portfolio. SQL, Power BI, Excel, DAX and Power Query projects.">
+<meta name="description" content="Sagar KC — Data Analyst & Business Intelligence Portfolio">
 <title>Sagar KC | Data Analyst Portfolio</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -19,7 +19,6 @@
   --muted:#64748b;
   --line:#dbe3ec;
   --accent:#2563eb;
-  --accent2:#0ea5e9;
   --navy:#081b33;
   --shadow:0 12px 32px rgba(15,23,42,.07);
   --radius:18px;
@@ -33,12 +32,11 @@
   --muted:#9fb0c4;
   --line:#20344a;
   --accent:#60a5fa;
-  --accent2:#38bdf8;
   --navy:#06101d;
-  --shadow:0 16px 40px rgba(0,0,0,.22);
 }
 
 *{box-sizing:border-box}
+
 html{scroll-behavior:smooth}
 
 body{
@@ -59,12 +57,13 @@ a{
   margin:auto;
 }
 
+/* NAVIGATION */
+
 .nav{
   position:sticky;
   top:0;
   z-index:20;
-  background:color-mix(in srgb,var(--surface) 90%,transparent);
-  backdrop-filter:blur(16px);
+  background:var(--surface);
   border-bottom:1px solid var(--line);
 }
 
@@ -85,7 +84,6 @@ a{
   color:var(--accent);
   font-size:11px;
   letter-spacing:.08em;
-  margin-top:-2px;
 }
 
 .navlinks{
@@ -119,6 +117,8 @@ a{
 .menu{
   display:none;
 }
+
+/* HERO */
 
 .hero{
   padding:82px 0 64px;
@@ -176,8 +176,6 @@ h1{
   border-radius:11px;
   font-weight:700;
   font-size:13px;
-  border:1px solid transparent;
-  cursor:pointer;
 }
 
 .btn-primary{
@@ -185,12 +183,8 @@ h1{
   color:#0b2340;
 }
 
-.btn-primary:hover{
-  transform:translateY(-1px);
-}
-
 .btn-ghost{
-  border-color:#41627f;
+  border:1px solid #41627f;
   color:#fff;
   background:rgba(255,255,255,.04);
 }
@@ -200,7 +194,6 @@ h1{
   background:rgba(255,255,255,.06);
   border-radius:24px;
   padding:24px;
-  box-shadow:0 25px 70px rgba(0,0,0,.2);
 }
 
 .chart{
@@ -227,6 +220,8 @@ h1{
   font:11px "JetBrains Mono",monospace;
   margin-top:12px;
 }
+
+/* GENERAL SECTIONS */
 
 section{
   padding:76px 0;
@@ -259,6 +254,8 @@ h3{
   margin:0;
 }
 
+/* SKILLS */
+
 .skills{
   display:grid;
   grid-template-columns:repeat(4,1fr);
@@ -290,6 +287,8 @@ h3{
   font-size:13px;
 }
 
+/* FILTERS */
+
 .filters{
   display:flex;
   gap:8px;
@@ -315,6 +314,8 @@ h3{
   border-color:var(--accent);
 }
 
+/* PROJECTS */
+
 .projects{
   display:grid;
   grid-template-columns:repeat(3,1fr);
@@ -337,8 +338,13 @@ h3{
 .project-visual{
   height:200px;
   background:#071b33;
-  position:relative;
   overflow:hidden;
+}
+
+.project-visual a{
+  display:block;
+  width:100%;
+  height:100%;
 }
 
 .project-visual img{
@@ -391,17 +397,17 @@ h3{
   gap:6px;
   background:var(--accent);
   color:#fff;
-  border:0;
   padding:9px 13px;
   border-radius:9px;
   font-size:12px;
   font-weight:700;
-  cursor:pointer;
 }
 
 .view-btn:hover{
   opacity:.9;
 }
+
+/* EXPERIENCE */
 
 .timeline{
   display:grid;
@@ -436,7 +442,6 @@ h3{
   height:10px;
   border-radius:50%;
   background:var(--accent);
-  box-shadow:0 0 0 4px var(--surface);
 }
 
 .item h4{
@@ -456,6 +461,8 @@ h3{
   color:var(--muted);
   margin:0;
 }
+
+/* EDUCATION */
 
 .edu{
   display:grid;
@@ -492,6 +499,8 @@ h3{
   white-space:nowrap;
 }
 
+/* CONTACT */
+
 .contact{
   background:var(--navy);
   color:#fff;
@@ -526,6 +535,8 @@ footer{
   font-size:11px;
 }
 
+/* ANIMATION */
+
 .reveal{
   opacity:0;
   transform:translateY(14px);
@@ -537,75 +548,10 @@ footer{
   transform:none;
 }
 
-/* DASHBOARD MODAL */
-.modal{
-  display:none;
-  position:fixed;
-  inset:0;
-  z-index:100;
-  background:rgba(0,0,0,.82);
-  align-items:center;
-  justify-content:center;
-  padding:25px;
-}
-
-.modal.show{
-  display:flex;
-}
-
-.modal-content{
-  position:relative;
-  width:min(1100px,96vw);
-  max-height:94vh;
-  background:var(--surface);
-  border-radius:18px;
-  overflow:auto;
-  box-shadow:0 25px 80px rgba(0,0,0,.5);
-}
-
-.modal-image{
-  width:100%;
-  max-height:70vh;
-  object-fit:contain;
-  display:block;
-  background:#071b33;
-}
-
-.modal-info{
-  padding:22px;
-}
-
-.modal-info h3{
-  margin:0 0 8px;
-  font-size:24px;
-}
-
-.modal-info p{
-  color:var(--muted);
-  margin:0;
-  font-size:14px;
-}
-
-.close-modal{
-  position:absolute;
-  top:12px;
-  right:12px;
-  z-index:5;
-  width:40px;
-  height:40px;
-  border:0;
-  border-radius:50%;
-  background:rgba(0,0,0,.7);
-  color:#fff;
-  font-size:22px;
-  cursor:pointer;
-}
-
-.close-modal:hover{
-  background:#000;
-}
+/* MOBILE */
 
 @media(max-width:850px){
+
   .navlinks{
     display:none;
   }
@@ -634,6 +580,7 @@ footer{
 }
 
 @media(max-width:520px){
+
   .skills{
     grid-template-columns:1fr;
   }
@@ -654,17 +601,17 @@ footer{
     height:64px;
   }
 
-  .modal{
-    padding:10px;
-  }
 }
 </style>
 </head>
 
 <body>
 
+<!-- NAVIGATION -->
+
 <nav class="nav">
   <div class="container nav-inner">
+
     <a class="brand" href="#home">
       SAGAR KC
       <span>DATA ANALYST • BUSINESS INTELLIGENCE</span>
@@ -680,24 +627,34 @@ footer{
     </div>
 
     <div class="nav-actions">
-      <button class="iconbtn" id="theme" aria-label="Toggle theme">☾</button>
-      <button class="menu" id="menu" aria-label="Open menu">☰</button>
+      <button class="iconbtn" id="theme">☾</button>
+      <button class="menu" id="menu">☰</button>
     </div>
+
   </div>
 </nav>
 
+
+<!-- HERO -->
+
 <header class="hero" id="home">
+
   <div class="container hero-grid">
 
     <div class="reveal">
-      <div class="eyebrow">DATA • INSIGHTS • DECISIONS</div>
+
+      <div class="eyebrow">
+        DATA • INSIGHTS • DECISIONS
+      </div>
 
       <h1>
         Turning data into<br>
         clear decisions.
       </h1>
 
-      <h2>Data Analyst | Business Intelligence</h2>
+      <h2>
+        Data Analyst | Business Intelligence
+      </h2>
 
       <p>
         I build interactive dashboards, clean and transform data,
@@ -706,6 +663,7 @@ footer{
       </p>
 
       <div class="ctas">
+
         <a class="btn btn-primary" href="#projects">
           Explore Projects →
         </a>
@@ -715,13 +673,20 @@ footer{
            download>
           Download Resume ↓
         </a>
+
       </div>
+
     </div>
 
-    <div class="hero-card reveal" aria-label="Analytics visual">
-      <div class="eyebrow">PORTFOLIO SNAPSHOT</div>
+
+    <div class="hero-card reveal">
+
+      <div class="eyebrow">
+        PORTFOLIO SNAPSHOT
+      </div>
 
       <div class="chart">
+
         <i class="bar" style="height:38%"></i>
         <i class="bar" style="height:54%"></i>
         <i class="bar" style="height:47%"></i>
@@ -730,21 +695,29 @@ footer{
         <i class="bar" style="height:79%"></i>
         <i class="bar" style="height:73%"></i>
         <i class="bar" style="height:92%"></i>
+
       </div>
 
       <div class="chart-label">
         <span>ANALYTICS WORK</span>
         <span>03 DASHBOARDS</span>
       </div>
+
     </div>
 
   </div>
+
 </header>
 
+
+<!-- ABOUT -->
+
 <section id="about">
+
   <div class="container reveal">
 
     <div class="section-head">
+
       <div>
         <div class="kicker">01 / Profile</div>
         <h3>Analyst mindset. Practical work.</h3>
@@ -754,7 +727,9 @@ footer{
         Computer Science undergraduate building a career around
         data analysis, business intelligence, and decision-focused reporting.
       </p>
+
     </div>
+
 
     <div class="skills">
 
@@ -762,8 +737,8 @@ footer{
         <div class="num">01</div>
         <h4>Analyze</h4>
         <p>
-          Use SQL and Excel to explore, clean, filter, aggregate,
-          and interpret business data.
+          Use SQL and Excel to explore, clean, filter,
+          aggregate, and interpret business data.
         </p>
       </div>
 
@@ -771,8 +746,8 @@ footer{
         <div class="num">02</div>
         <h4>Transform</h4>
         <p>
-          Prepare datasets with Power Query and build structured
-          models for reporting.
+          Prepare datasets with Power Query and build
+          structured models for reporting.
         </p>
       </div>
 
@@ -795,13 +770,20 @@ footer{
       </div>
 
     </div>
+
   </div>
+
 </section>
 
+
+<!-- SKILLS -->
+
 <section id="skills">
+
   <div class="container reveal">
 
     <div class="section-head">
+
       <div>
         <div class="kicker">02 / Toolkit</div>
         <h3>Technical Skills</h3>
@@ -810,7 +792,9 @@ footer{
       <p>
         A focused stack for data analysis and business intelligence work.
       </p>
+
     </div>
+
 
     <div class="skills">
 
@@ -818,8 +802,8 @@ footer{
         <div class="num">SQL</div>
         <h4>Query & Analysis</h4>
         <p>
-          SELECT, WHERE, GROUP BY, HAVING, JOINs, CTEs,
-          subqueries, CASE WHEN, window functions, aggregates.
+          SELECT, WHERE, GROUP BY, HAVING, JOINs,
+          CTEs, subqueries, CASE WHEN, window functions, aggregates.
         </p>
       </div>
 
@@ -851,13 +835,20 @@ footer{
       </div>
 
     </div>
+
   </div>
+
 </section>
 
+
+<!-- PROJECTS -->
+
 <section id="projects">
+
   <div class="container reveal">
 
     <div class="section-head">
+
       <div>
         <div class="kicker">03 / Selected Work</div>
         <h3>Featured Projects</h3>
@@ -866,34 +857,63 @@ footer{
       <p>
         Three portfolio dashboards built around different business domains.
       </p>
+
     </div>
 
+
+    <!-- FILTERS -->
+
     <div class="filters">
-      <button class="filter active" data-filter="all">All</button>
-      <button class="filter" data-filter="finance">Finance</button>
-      <button class="filter" data-filter="health">Healthcare</button>
-      <button class="filter" data-filter="ecommerce">E-Commerce</button>
+
+      <button class="filter active" data-filter="all">
+        All
+      </button>
+
+      <button class="filter" data-filter="finance">
+        Finance
+      </button>
+
+      <button class="filter" data-filter="health">
+        Healthcare
+      </button>
+
+      <button class="filter" data-filter="ecommerce">
+        E-Commerce
+      </button>
+
     </div>
+
 
     <div class="projects">
 
-      <!-- BANKING -->
+
+      <!-- BANKING & FINANCE -->
+
       <article class="project" data-category="finance">
 
         <div class="project-visual">
-          <img
-            src="https://raw.githubusercontent.com/sagarkc29/portfolio/main/Screenshot%202026-09-16%20165120.png"
-            alt="Banking and Finance Dashboard"
-            onclick="openProject(
-              'Banking & Finance Dashboard',
-              'Interactive loan dashboard covering loan trends, branch distribution, loan status, and top-customer performance.',
-              this.src
-            )"
+
+          <a
+            href="https://raw.githubusercontent.com/sagarkc29/portfolio/main/Screenshot%202026-09-16%20165120.png"
+            target="_blank"
+            rel="noopener"
           >
+
+            <img
+              src="https://raw.githubusercontent.com/sagarkc29/portfolio/main/Screenshot%202026-09-16%20165120.png"
+              alt="Banking and Finance Dashboard"
+            >
+
+          </a>
+
         </div>
 
+
         <div class="project-body">
-          <h4>Banking & Finance Dashboard</h4>
+
+          <h4>
+            Banking & Finance Dashboard
+          </h4>
 
           <p>
             Interactive loan dashboard covering loan trends,
@@ -901,42 +921,56 @@ footer{
           </p>
 
           <div class="tags">
+
             <span class="tag">Power BI</span>
             <span class="tag">DAX</span>
             <span class="tag">Power Query</span>
             <span class="tag">KPI Reporting</span>
+
           </div>
 
-          <button
+
+          <a
             class="view-btn"
-            onclick="openProject(
-              'Banking & Finance Dashboard',
-              'Interactive loan dashboard covering loan trends, branch distribution, loan status, and top-customer performance.',
-              'https://raw.githubusercontent.com/sagarkc29/portfolio/main/Screenshot%202026-09-16%20165120.png'
-            )">
+            href="https://raw.githubusercontent.com/sagarkc29/portfolio/main/Screenshot%202026-09-16%20165120.png"
+            target="_blank"
+            rel="noopener"
+          >
             View Project →
-          </button>
+          </a>
+
         </div>
 
       </article>
 
+
       <!-- HOSPITAL -->
+
       <article class="project" data-category="health">
 
         <div class="project-visual">
-          <img
-            src="https://raw.githubusercontent.com/sagarkc29/portfolio/main/Screenshot%202026-09-16%20165018.png"
-            alt="Hospital Operations Dashboard"
-            onclick="openProject(
-              'Hospital Operations Dashboard',
-              'Healthcare dashboard tracking hospital performance, revenue trends, department revenue, and gender distribution.',
-              this.src
-            )"
+
+          <a
+            href="https://raw.githubusercontent.com/sagarkc29/portfolio/main/Screenshot%202026-09-16%20165018.png"
+            target="_blank"
+            rel="noopener"
           >
+
+            <img
+              src="https://raw.githubusercontent.com/sagarkc29/portfolio/main/Screenshot%202026-09-16%20165018.png"
+              alt="Hospital Operations Dashboard"
+            >
+
+          </a>
+
         </div>
 
+
         <div class="project-body">
-          <h4>Hospital Operations Dashboard</h4>
+
+          <h4>
+            Hospital Operations Dashboard
+          </h4>
 
           <p>
             Healthcare dashboard tracking hospital performance,
@@ -944,42 +978,56 @@ footer{
           </p>
 
           <div class="tags">
+
             <span class="tag">Power BI</span>
             <span class="tag">DAX</span>
             <span class="tag">Power Query</span>
             <span class="tag">Operations</span>
+
           </div>
 
-          <button
+
+          <a
             class="view-btn"
-            onclick="openProject(
-              'Hospital Operations Dashboard',
-              'Healthcare dashboard tracking hospital performance, revenue trends, department revenue, and gender distribution.',
-              'https://raw.githubusercontent.com/sagarkc29/portfolio/main/Screenshot%202026-09-16%20165018.png'
-            )">
+            href="https://raw.githubusercontent.com/sagarkc29/portfolio/main/Screenshot%202026-09-16%20165018.png"
+            target="_blank"
+            rel="noopener"
+          >
             View Project →
-          </button>
+          </a>
+
         </div>
 
       </article>
 
+
       <!-- E-COMMERCE -->
+
       <article class="project" data-category="ecommerce">
 
         <div class="project-visual">
-          <img
-            src="https://raw.githubusercontent.com/sagarkc29/portfolio/main/Screenshot%202026-09-16%20164917.png"
-            alt="E-Commerce Sales Dashboard"
-            onclick="openProject(
-              'E-Commerce Sales Dashboard',
-              'Sales and revenue dashboard covering profit, customer behavior, product performance, and category trends.',
-              this.src
-            )"
+
+          <a
+            href="https://raw.githubusercontent.com/sagarkc29/portfolio/main/Screenshot%202026-09-16%20164917.png"
+            target="_blank"
+            rel="noopener"
           >
+
+            <img
+              src="https://raw.githubusercontent.com/sagarkc29/portfolio/main/Screenshot%202026-09-16%20164917.png"
+              alt="E-Commerce Sales Dashboard"
+            >
+
+          </a>
+
         </div>
 
+
         <div class="project-body">
-          <h4>E-Commerce Sales Dashboard</h4>
+
+          <h4>
+            E-Commerce Sales Dashboard
+          </h4>
 
           <p>
             Sales and revenue dashboard covering profit,
@@ -987,33 +1035,44 @@ footer{
           </p>
 
           <div class="tags">
+
             <span class="tag">Power BI</span>
             <span class="tag">DAX</span>
             <span class="tag">Power Query</span>
             <span class="tag">Sales Analysis</span>
+
           </div>
 
-          <button
+
+          <a
             class="view-btn"
-            onclick="openProject(
-              'E-Commerce Sales Dashboard',
-              'Sales and revenue dashboard covering profit, customer behavior, product performance, and category trends.',
-              'https://raw.githubusercontent.com/sagarkc29/portfolio/main/Screenshot%202026-09-16%20164917.png'
-            )">
+            href="https://raw.githubusercontent.com/sagarkc29/portfolio/main/Screenshot%202026-09-16%20164917.png"
+            target="_blank"
+            rel="noopener"
+          >
             View Project →
-          </button>
+          </a>
+
         </div>
 
       </article>
 
+
     </div>
+
   </div>
+
 </section>
 
+
+<!-- EXPERIENCE -->
+
 <section id="experience">
+
   <div class="container reveal">
 
     <div class="section-head">
+
       <div>
         <div class="kicker">04 / Experience</div>
         <h3>Experience & Credentials</h3>
@@ -1023,14 +1082,21 @@ footer{
         Hands-on learning and professional simulations
         supporting my analytics foundation.
       </p>
+
     </div>
 
+
     <div class="timeline">
+
 
       <div class="panel">
 
         <div class="item">
-          <h4>Data Analytics with AI Intern</h4>
+
+          <h4>
+            Data Analytics with AI Intern
+          </h4>
+
           <div class="meta">
             AICTE–BharatCares–IBM SkillsBuild · Aug 2026
           </div>
@@ -1041,10 +1107,16 @@ footer{
             machine learning basics, and AI-driven visualization.
             Delivered a final capstone project.
           </p>
+
         </div>
 
+
         <div class="item">
-          <h4>Data Analytics Job Simulation</h4>
+
+          <h4>
+            Data Analytics Job Simulation
+          </h4>
+
           <div class="meta">
             Deloitte · Jun 2026
           </div>
@@ -1053,9 +1125,13 @@ footer{
             Completed practical data analysis, business analysis,
             and forensic technology tasks in a simulated professional environment.
           </p>
+
         </div>
 
       </div>
+
+
+      <!-- EDUCATION -->
 
       <div class="panel" id="education">
 
@@ -1063,82 +1139,152 @@ footer{
           Education
         </div>
 
+
         <div class="edu">
 
           <div class="edu-row">
+
             <div>
-              <h4>B.Tech in Computer Science & Engineering</h4>
+
+              <h4>
+                B.Tech in Computer Science & Engineering
+              </h4>
+
               <p>
                 CMR University, Bengaluru · CGPA: 7.5 / 10
               </p>
+
             </div>
 
-            <span class="date">2023–2027</span>
+            <span class="date">
+              2023–2027
+            </span>
+
           </div>
 
+
           <div class="edu-row">
+
             <div>
-              <h4>Senior Secondary (XII / PUC)</h4>
-              <p>Vedanta PU College</p>
+
+              <h4>
+                Senior Secondary (XII / PUC)
+              </h4>
+
+              <p>
+                Vedanta PU College
+              </p>
+
             </div>
 
-            <span class="date">2021–2023</span>
+            <span class="date">
+              2021–2023
+            </span>
+
           </div>
 
+
           <div class="edu-row">
+
             <div>
-              <h4>Secondary School (X)</h4>
-              <p>Swami Vivekananda Vidya Samasthe</p>
+
+              <h4>
+                Secondary School (X)
+              </h4>
+
+              <p>
+                Swami Vivekananda Vidya Samasthe
+              </p>
+
             </div>
+
           </div>
 
         </div>
+
 
         <div class="kicker" style="margin:28px 0 14px">
           Certifications
         </div>
 
+
         <div class="edu">
 
           <div class="edu-row">
+
             <div>
-              <h4>IBM SkillsBuild Data Analytics with AI</h4>
-              <p>AICTE–BharatCares–IBM</p>
+
+              <h4>
+                IBM SkillsBuild Data Analytics with AI
+              </h4>
+
+              <p>
+                AICTE–BharatCares–IBM
+              </p>
+
             </div>
 
-            <span class="date">19 Aug 2026</span>
+            <span class="date">
+              19 Aug 2026
+            </span>
+
           </div>
 
+
           <div class="edu-row">
+
             <div>
-              <h4>Deloitte Data Analytics Job Simulation</h4>
-              <p>Certificate of Completion</p>
+
+              <h4>
+                Deloitte Data Analytics Job Simulation
+              </h4>
+
+              <p>
+                Certificate of Completion
+              </p>
+
             </div>
 
-            <span class="date">15 Jun 2026</span>
+            <span class="date">
+              15 Jun 2026
+            </span>
+
           </div>
 
         </div>
 
       </div>
+
     </div>
+
   </div>
+
 </section>
+
+
+<!-- CONTACT -->
 
 <section id="contact" class="contact">
 
   <div class="container contact-grid reveal">
 
     <div>
-      <div class="kicker">05 / Contact</div>
 
-      <h3>Let's connect.</h3>
+      <div class="kicker">
+        05 / Contact
+      </div>
+
+      <h3>
+        Let's connect.
+      </h3>
 
       <p>
         Open to Data Analyst, Business Intelligence,
         and related entry-level opportunities.
       </p>
+
     </div>
+
 
     <div class="contact-list">
 
@@ -1157,7 +1303,8 @@ footer{
       <a
         href="https://linkedin.com/in/sagar-kc-0309bb300"
         target="_blank"
-        rel="noopener">
+        rel="noopener"
+      >
         in &nbsp; linkedin.com/in/sagar-kc-0309bb300 ↗
       </a>
 
@@ -1168,92 +1315,73 @@ footer{
     </div>
 
   </div>
+
 </section>
 
+
+<!-- FOOTER -->
+
 <footer>
+
   <div class="container">
     © 2026 Sagar KC · Data Analyst | Business Intelligence
   </div>
+
 </footer>
-
-
-<!-- DASHBOARD POPUP -->
-<div class="modal" id="projectModal">
-
-  <div class="modal-content">
-
-    <button
-      class="close-modal"
-      onclick="closeProject()"
-      aria-label="Close">
-      ×
-    </button>
-
-    <img
-      class="modal-image"
-      id="modalImage"
-      src=""
-      alt="Dashboard">
-
-    <div class="modal-info">
-      <h3 id="modalTitle"></h3>
-      <p id="modalDescription"></p>
-    </div>
-
-  </div>
-</div>
 
 
 <script>
 
-/* DARK / LIGHT MODE */
+/* DARK MODE */
 
 const root = document.documentElement;
 
-const saved = localStorage.getItem('theme');
+const saved = localStorage.getItem("theme");
 
 if(saved){
   root.dataset.theme = saved;
 }
 
-document.getElementById('theme').addEventListener('click',()=>{
+document.getElementById("theme").addEventListener("click",()=>{
 
   const next =
-    root.dataset.theme === 'dark'
-      ? 'light'
-      : 'dark';
+    root.dataset.theme === "dark"
+      ? "light"
+      : "dark";
 
   root.dataset.theme = next;
 
-  localStorage.setItem('theme',next);
+  localStorage.setItem("theme",next);
 
 });
 
 
-/* PROJECT FILTERS */
+/* PROJECT FILTER */
 
-document.querySelectorAll('.filter').forEach(btn=>{
+document.querySelectorAll(".filter").forEach(button=>{
 
-  btn.addEventListener('click',()=>{
+  button.addEventListener("click",()=>{
 
-    document
-      .querySelectorAll('.filter')
-      .forEach(b=>b.classList.remove('active'));
+    document.querySelectorAll(".filter").forEach(btn=>{
+      btn.classList.remove("active");
+    });
 
-    btn.classList.add('active');
+    button.classList.add("active");
 
-    const f = btn.dataset.filter;
+    const filter = button.dataset.filter;
 
-    document
-      .querySelectorAll('.project')
-      .forEach(p=>{
+    document.querySelectorAll(".project").forEach(project=>{
 
-        p.style.display =
-          (f === 'all' || p.dataset.category === f)
-            ? 'block'
-            : 'none';
+      if(
+        filter === "all" ||
+        project.dataset.category === filter
+      ){
+        project.style.display = "block";
+      }else{
+        project.style.display = "none";
+      }
 
-      });
+    });
 
   });
 
@@ -1262,75 +1390,26 @@ document.querySelectorAll('.filter').forEach(btn=>{
 
 /* MOBILE MENU */
 
-const menu = document.getElementById('menu');
+document.getElementById("menu").addEventListener("click",()=>{
 
-menu.addEventListener('click',()=>{
+  const nav = document.querySelector(".navlinks");
 
-  const nav = document.querySelector('.navlinks');
+  if(nav.style.display === "flex"){
 
-  const open = nav.style.display === 'flex';
+    nav.style.display = "none";
 
-  nav.style.display = open ? 'none' : 'flex';
+  }else{
 
-  if(!open){
-
-    nav.style.position = 'absolute';
-    nav.style.top = '64px';
-    nav.style.left = '0';
-    nav.style.right = '0';
-    nav.style.padding = '18px 5%';
-    nav.style.background = 'var(--surface)';
-    nav.style.borderBottom = '1px solid var(--line)';
-    nav.style.flexDirection = 'column';
-    nav.style.alignItems = 'flex-start';
-
-  }
-
-});
-
-
-/* PROJECT MODAL */
-
-function openProject(title, description, image){
-
-  document.getElementById('modalTitle').textContent = title;
-
-  document.getElementById('modalDescription').textContent = description;
-
-  document.getElementById('modalImage').src = image;
-
-  document.getElementById('projectModal').classList.add('show');
-
-  document.body.style.overflow = 'hidden';
-
-}
-
-
-function closeProject(){
-
-  document.getElementById('projectModal').classList.remove('show');
-
-  document.body.style.overflow = '';
-
-}
-
-
-document.getElementById('projectModal').addEventListener('click',(e)=>{
-
-  if(e.target.id === 'projectModal'){
-
-    closeProject();
-
-  }
-
-});
-
-
-document.addEventListener('keydown',(e)=>{
-
-  if(e.key === 'Escape'){
-
-    closeProject();
+    nav.style.display = "flex";
+    nav.style.position = "absolute";
+    nav.style.top = "64px";
+    nav.style.left = "0";
+    nav.style.right = "0";
+    nav.style.padding = "18px 5%";
+    nav.style.background = "var(--surface)";
+    nav.style.borderBottom = "1px solid var(--line)";
+    nav.style.flexDirection = "column";
+    nav.style.alignItems = "flex-start";
 
   }
 
@@ -1339,22 +1418,26 @@ document.addEventListener('keydown',(e)=>{
 
 /* SCROLL ANIMATION */
 
-const io = new IntersectionObserver(
-  es => es.forEach(e => {
+const observer = new IntersectionObserver(
+  entries => {
 
-    if(e.isIntersecting){
+    entries.forEach(entry=>{
 
-      e.target.classList.add('show');
+      if(entry.isIntersecting){
 
-    }
+        entry.target.classList.add("show");
 
-  }),
+      }
+
+    });
+
+  },
   {threshold:.08}
 );
 
-document
-  .querySelectorAll('.reveal')
-  .forEach(el => io.observe(el));
+document.querySelectorAll(".reveal").forEach(element=>{
+  observer.observe(element);
+});
 
 </script>
 
